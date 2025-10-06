@@ -15,5 +15,12 @@ if menu == "Inserir":
             criar_aluno(nome, idade)
             st.success(f"Aluno {nome} inserido com sucesso!")
         else:
-            st.warning("O campo nome não pode ser vazio.")
+            st.warning("O campo nome não pode ser vazio...")
 
+elif menu == "Listar":
+    st.subheader("Listar alunos")
+    alunos = listar_alunos()
+    if alunos:
+        st.dataframe(alunos)
+    else:
+        st.info("Nenhum aluno encontrado.")
