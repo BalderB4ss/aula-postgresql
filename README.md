@@ -1,93 +1,56 @@
-# 🎓 Sistema de Gerenciamento de Alunos
+# CRUD COM POSTGRESQL + PYTHON
 
-Aplicação web simples para gerenciar alunos utilizando **Streamlit** como interface e **PostgreSQL** como banco de dados.
+Este projeto é um exemplo prático de CRUD usando:
+- Banco de dados  **PostgreSQL**
+- Conexão com **psycopg2**
+- Interface web com **Streamlit**
 
-## 📋 Funcionalidades
+## Como executar
 
-- ➕ Inserir novo aluno
-- 📋 Listar alunos cadastrados
-- ✏️ Atualizar a idade de um aluno
-- 🗑 Deletar um aluno do sistema
-
----
-
-## 🛠 Tecnologias Utilizadas
-
-- [Python 3.8+](https://www.python.org/)
-- [Streamlit](https://streamlit.io/)
-- [PostgreSQL](https://www.postgresql.org/)
-- [psycopg2](https://www.psycopg.org/)
-- [python-dotenv](https://pypi.org/project/python-dotenv/)
-
----
-
-## 🚀 Como Executar
-
-### 1. Clone o repositório
-
+### 1. Clonar o repositório
 ```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
-2. Instale as dependências
-Utilize um ambiente virtual recomendado (como venv ou virtualenv).
+git clone https://github.com/Gbrito-code/Aula-Postgresql.git
+```
 
-bash
-Copiar código
+### 2. Criar ambiente virtual (opcinal)
+```bash
+python -m venv .venv
+.venv\Scripts\activate #windows
+```
+
+### 3. Instalar dependências
+```bash
 pip install -r requirements.txt
-Exemplo de requirements.txt:
+```
 
-txt
-Copiar código
-streamlit
-psycopg2
-python-dotenv
-3. Configure o arquivo .env
-Crie um arquivo .env na raiz do projeto com as credenciais do seu banco de dados PostgreSQL:
+### 4. Configurar variáveis de ambiente
+crie um arquivo .env na raiz do projeto com:
 
-env
-Copiar código
-DB_NAME=seu_banco
-DB_USER=seu_usuario
+DB_NAME=nome_banco
+
+DB_USER=postgres
+
 DB_PASSWORD=sua_senha
+
 DB_HOST=localhost
+
 DB_PORT=5432
-4. Configure o banco de dados
-Certifique-se de ter uma tabela chamada alunos com a seguinte estrutura:
 
-sql
-Copiar código
-CREATE TABLE alunos (
-    id SERIAL PRIMARY KEY,
-    nome TEXT NOT NULL,
-    idade INTEGER NOT NULL
-);
-5. Execute a aplicação
-bash
-Copiar código
-streamlit run app.py
-📁 Estrutura do Projeto
-bash
-Copiar código
-.
-├── app.py                # Interface com Streamlit
-├── crud.py               # Funções de CRUD (Create, Read, Update, Delete)
-├── db.py                 # Conexão com PostgreSQL
-├── .env                  # Variáveis de ambiente (não versionado)
-├── requirements.txt      # Bibliotecas necessárias
-└── README.md
-📸 Interface
-A aplicação possui uma interface interativa com menu lateral para:
+### 5. Rodar aplicação
+```bash
+python -m streamlit run app.py
+```
 
-Inserir alunos com nome e idade
+### Funcionalidades
 
-Listar todos os registros do banco
+- Conexão com o banco
+- Criar alunos
+- Listar alunos
+- Atualizar alunos
+- Deletar alunos
+- Interface simples no streamlit
 
-Atualizar a idade de um aluno existente
+### Autor
+Projeto desenvolvido em aula para treinar python + postgresql
 
-Deletar um aluno selecionado por ID
-
-⚠️ Requisitos
-Python 3.8 ou superior
-
-PostgreSQL instalado e configurado
-
+Professor: Gabriel Brito de sousa
