@@ -24,3 +24,16 @@ elif menu == "Listar":
         st.dataframe(alunos)
     else:
         st.info("Nenhum aluno encontrado.")
+
+elif menu == "Atualizar":
+    st.subheader("Atualizar idade")
+    alunos = listar_alunos()
+    if alunos:
+        id_aluno = st.selectbox("Escolha o id do aluno para atualizar", [aluno[0] for aluno in alunos])
+        nova_idade = st.number_input("Nova idade", min_value=16, step=1)
+        if st.button("Atualizar"):
+            atualizar_idade(id_aluno, nova_idade)
+            st.success("Idade do aluno atualizada com sucesso.")
+    else:
+        st.info("Nenhum aluno disponível para atualizar")
+        
