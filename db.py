@@ -21,8 +21,4 @@ def conectar():
     except Exception as erro:
         print(f"Erro de conexão {erro}")
         return None, None
-conexao, cursor = conectar()
-cursor.execute("INSERT INTO alunos (nome, idade) VALUES (%s,%s)",
-               ("Balder",3))
-conexao.commit()
-conexao.close()
+    
